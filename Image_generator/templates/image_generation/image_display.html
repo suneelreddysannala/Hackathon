@@ -9,7 +9,16 @@
 </head>
 <body>
     <h1>Generated Image for "{{ prompt }}"</h1>
+
+    <!-- Display the image -->
     <img src="data:image/png;base64,{{ image_data }}" alt="Generated Image">
+
+    <!-- Download button -->
+    <br><br>
+    <a href="data:image/png;base64,{{ image_data }}" download="generated_image.png">
+        <button>Download Image</button>
+    </a>
+
     <br>
     <a href="{% url 'generate_image' %}">Generate another image</a>
 </body>
